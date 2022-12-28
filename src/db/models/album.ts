@@ -1,5 +1,15 @@
 import { Sequelize, DataTypes, Model } from 'sequelize';
 
+export interface IAlbum {
+  id: number;
+  title: string;
+  release: Date;
+  publisher: string;
+  agency: string;
+  description: string;
+  img_url: string;
+}
+
 export class Album extends Model {
   declare id: number;
   declare title: string;

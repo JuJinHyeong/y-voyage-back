@@ -1,6 +1,17 @@
 import { Sequelize, DataTypes, Model } from 'sequelize';
 import { Album } from './album';
 
+export interface ISong {
+  id: number;
+  album_id: number;
+  title: string;
+  youtube_url: string;
+  melon_url: string;
+  genie_url: string;
+  bugs_url: string;
+  lyrics: any[];
+}
+
 export class Song extends Model {
   declare id: number;
   declare album_id: number;

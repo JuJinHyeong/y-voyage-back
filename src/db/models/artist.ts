@@ -1,5 +1,11 @@
 import { Sequelize, DataTypes, Model } from 'sequelize';
 
+export interface IArtist {
+  id: number;
+  name: string;
+  description: string;
+}
+
 export class Artist extends Model {
   declare id: number;
   declare name: string;
@@ -22,7 +28,7 @@ export const initialize = (sequelize: Sequelize) => {
       },
       description: {
         type: DataTypes.STRING,
-        allowNull: true,
+        allowNull: false,
         defaultValue: '',
       },
     },

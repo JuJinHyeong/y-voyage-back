@@ -2,6 +2,11 @@ import { Sequelize, DataTypes, Model } from 'sequelize';
 import { Artist } from './artist';
 import { Song } from './song';
 
+export interface IArrange {
+  artist_id: number;
+  song_id: number;
+}
+
 export class Arrange extends Model {
   declare artist_id: number;
   declare song_id: number;

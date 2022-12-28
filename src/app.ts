@@ -3,7 +3,7 @@ import path from 'path';
 import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv';
 
-import heartbeat from './routes/heartbeat';
+import routers from './routes';
 import { initialize as dbInitialize } from './db';
 
 dotenv.config();
@@ -17,9 +17,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/song', routers.songRouter);
+
 if (process.env.NODE_ENV === 'dev') {
-  app.use('/heartbeat', heartbeat);
+  app.use('/heartbeat', routers.heartbeatRouter);
 }
+app.use('/error', () => console.log('error'));
 
 const appInitialize = async () => {
   await dbInitialize();

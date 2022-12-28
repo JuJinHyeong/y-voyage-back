@@ -2,6 +2,11 @@ import { Sequelize, DataTypes, Model } from 'sequelize';
 import { Genre } from './genre';
 import { Song } from './song';
 
+export interface ISongRelGenre {
+  song_id: number;
+  genre_id: number;
+}
+
 export class SongRelGenre extends Model {
   declare song_id: number;
   declare genre_id: number;

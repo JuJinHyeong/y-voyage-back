@@ -1,5 +1,10 @@
 import { Sequelize, DataTypes, Model } from 'sequelize';
 
+export interface IGenre {
+  id: number;
+  name: string;
+}
+
 export class Genre extends Model {
   declare id: number;
   declare name: string;

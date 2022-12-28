@@ -15,7 +15,4 @@ export const initialize = async () => {
   await sequelize.authenticate();
   console.log('connection ok');
   modelInitialze(sequelize);
-
-  await sequelize.sync();
-  console.log('sequlize sync');
 };

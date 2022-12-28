@@ -1,6 +1,13 @@
 import { Sequelize, DataTypes, Model } from 'sequelize';
 import { Song } from './song';
 
+export interface ILyrics {
+  id: number;
+  song_id: number;
+  time: number;
+  value: string;
+}
+
 export class Lyrics extends Model {
   declare id: number;
   declare song_id: number;
