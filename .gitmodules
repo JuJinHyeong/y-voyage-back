@@ -1,0 +1,3 @@
+[submodule "y-voyage-common"]
+	path = y-voyage-common
+	url = git@github.com:JuJinHyeong/y-voyage-common.git
