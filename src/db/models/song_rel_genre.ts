@@ -1,6 +1,4 @@
 import { Sequelize, DataTypes, Model } from 'sequelize';
-import { Genre } from './genre';
-import { Song } from './song';
 
 export interface ISongRelGenre {
   song_id: number;
@@ -19,19 +17,11 @@ export const initialize = (sequelize: Sequelize) => {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
-        references: {
-          model: Song,
-          key: 'id',
-        },
       },
       genre_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
-        references: {
-          model: Genre,
-          key: 'id',
-        },
       },
     },
     {

@@ -1,5 +1,4 @@
 import { Sequelize, DataTypes, Model } from 'sequelize';
-import { Album } from './album';
 
 export interface ISong {
   id: number;
@@ -35,10 +34,6 @@ export const initialize = (sequelize: Sequelize) => {
       album_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        // references: {
-        //   model: Album,
-        //   key: 'id',
-        // },
       },
       title: {
         type: DataTypes.STRING,

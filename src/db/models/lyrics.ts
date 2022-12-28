@@ -1,5 +1,4 @@
 import { Sequelize, DataTypes, Model } from 'sequelize';
-import { Song } from './song';
 
 export interface ILyrics {
   id: number;
@@ -27,10 +26,6 @@ export const initialize = (sequelize: Sequelize) => {
       song_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        references: {
-          model: Song,
-          key: 'id',
-        },
       },
       time: {
         type: DataTypes.INTEGER,
